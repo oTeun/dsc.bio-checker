@@ -31,9 +31,8 @@ for name in names:
     threads.append(Thread(target=check, args=[name]))
 for t in threads:
     t.start()
-    sleep(0.02)
-    # I sleep a little because otherwise it starts returning server errors
-    # Basically if you dont sleep you end up ddossing their servers cuz their protection is shit
+    sleep(0.2)
+    # sleeping to prevent getting ratelimited too much
 for t in threads:
     t.join()
 
